@@ -1,0 +1,21 @@
+-- Limpieza segura de objetos del dominio LockerFlow en schema public.
+DROP TABLE IF EXISTS "audit_events" CASCADE;
+DROP TABLE IF EXISTS "incidents" CASCADE;
+DROP TABLE IF EXISTS "overflow_items" CASCADE;
+DROP TABLE IF EXISTS "pickup_attempts" CASCADE;
+DROP TABLE IF EXISTS "pickup_codes" CASCADE;
+DROP TABLE IF EXISTS "packages" CASCADE;
+DROP TABLE IF EXISTS "compartments" CASCADE;
+DROP TABLE IF EXISTS "lockers" CASCADE;
+DROP TABLE IF EXISTS "people" CASCADE;
+DROP TABLE IF EXISTS "employees" CASCADE;
+
+DROP TYPE IF EXISTS "IncidentStatus" CASCADE;
+DROP TYPE IF EXISTS "IncidentType" CASCADE;
+DROP TYPE IF EXISTS "PickupAttemptStatus" CASCADE;
+DROP TYPE IF EXISTS "OverflowStatus" CASCADE;
+DROP TYPE IF EXISTS "PackageStatus" CASCADE;
+DROP TYPE IF EXISTS "CompartmentStatus" CASCADE;
+DROP TYPE IF EXISTS "SizeCategory" CASCADE;
+DROP TYPE IF EXISTS "IntegrationType" CASCADE;
+DROP TYPE IF EXISTS "EmployeeRole" CASCADE;

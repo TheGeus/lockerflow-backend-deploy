@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: lockerflow-api
+    runtime: node
+    rootDir: backend
+    plan: free
+    autoDeploy: true
+    buildCommand: npm run render:build
+    startCommand: npm run render:start
+    healthCheckPath: /api/v1/health/ready
+    envVars:
+      - key: NODE_VERSION
+        value: 22.11.0
+      - key: DATABASE_URL
+        sync: false
+      - key: DIRECT_URL
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 8h
+      - key: PRISMA_DEPLOY_MODE
+        value: skip
+      - key: CORS_ORIGIN
+        sync: false
